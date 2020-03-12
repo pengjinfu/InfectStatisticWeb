@@ -1,19 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>实时疫情检控</title>
-    <link href="../static/css/main.css" rel="stylesheet" />
-</head>
-<body>
-    <div id="title">
-        <h1>实时全国疫情地图</h1>
-    </div>
-    <div id="time">时间</div>
-    <div id="left">左</div>
-    <div id="centerA">中1</div>
-    <div id="centerB">中2</div>
-    <div id="right">右</div>
+    <head>
+        <meta charset="UTF-8">
+        <title>实时疫情检控</title>
+        <script src="../static/js/jquery-3.4.1.js"></script>
+        <link href="../static/css/main.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div id="title"><h1>实时全国疫情地图</h1></div>
+        <div id="time">时间</div>
+        <div id="left">左</div>
+        <div id="centerA">
+            <div class="num"><h1>123</h1></div>
+            <div class="num"><h1>123</h1></div>
+            <div class="num"><h1>123</h1></div>
+            <div class="num"><h1>123</h1></div>
+            <div class="text"><h1>累计确诊</h1></div>
+            <div class="text"><h1>累计治愈</h1></div>
+            <div class="text"><h1>累计死亡</h1></div>
+            <div class="text"><h1>现有疑似</h1></div>
+        </div>
+        <div id="centerB">中2</div>
+        <div id="right">右</div>
+    <script>
+        function gettime(){
+            $.ajax({
+                url:"/time",
+                timeout:10000,//超时时间设置为10秒
+                success:function(data){
+                    $("#time").html(data)
+                },
+                error:function(xhr,type,errorThrown){
 
-</body>
+                }
+            });
+        }
+        setInterval(gettime,1000)
+    </script>
+    </body>
 </html>

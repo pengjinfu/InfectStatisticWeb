@@ -18,11 +18,13 @@ body{
 }
 #time{
     position: absolute;
-    width: 25%;
+    /*width: 25%;*/
     height: 10%;
-    top: 0;
-    right: 0%;
+    top: 5%;
+    right: 2%;
     background: yellow;
+    color: aquamarine;
+    font-size: 20px;
 }
 #left{
     position: absolute;
@@ -39,6 +41,26 @@ body{
     top: 10%;
     left: 25%;
     background: coral;
+}
+.num{
+    width: 25%;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: red;
+    font-size: 20px;
+}
+.text{
+    width: 25%;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 楷体;
+}
+.text h2{
+    margin: 0;
 }
 #centerB{
     position: absolute;

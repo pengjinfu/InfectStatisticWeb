@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>实时疫情检控</title>
-        <script src="../static/js/jquery-3.4.1.js"></script>
+        <script src="../static/js/jquery-1.11.1.js"></script>
         <link href="../static/css/main.css" rel="stylesheet" />
     </head>
     <body>
@@ -16,9 +16,9 @@
             <div class="num"><h1>123</h1></div>
             <div class="num"><h1>123</h1></div>
             <div class="text"><h1>累计确诊</h1></div>
+            <div class="text"><h1>现有疑似</h1></div>
             <div class="text"><h1>累计治愈</h1></div>
             <div class="text"><h1>累计死亡</h1></div>
-            <div class="text"><h1>现有疑似</h1></div>
         </div>
         <div id="centerB">中2</div>
         <div id="right">右</div>
@@ -35,7 +35,23 @@
                 }
             });
         }
+
+        function get_centerA_data(){
+            $.ajax({
+                url:"/centerA",
+                success:function(data) {
+                    $(".num h1").eq(0).text(data.confirm);
+                    $(".num h1").eq(1).text(data.suspect);
+                    $(".num h1").eq(2).text(data.heal);
+                    $(".num h1").eq(3).text(data.dead);
+                },
+                error:function(xhr,type,errorThrown){
+
+                }
+            });
+        }
         setInterval(gettime,1000)
+        setInterval(get_centerA_data,1000)
     </script>
     </body>
 </html>

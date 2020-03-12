@@ -1,0 +1,58 @@
+body{
+    margin: 0;
+    background: aqua;
+}
+#title{
+    position: absolute;
+    width: 50%;
+    height: 10%;
+    top: 0;
+    left: 25%;
+    background: mistyrose;
+    color: black;
+    font-size: 25px;
+    /*居中分布*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#time{
+    position: absolute;
+    width: 25%;
+    height: 10%;
+    top: 0;
+    right: 0%;
+    background: yellow;
+}
+#left{
+    position: absolute;
+    width: 25%;
+    height: 90%;
+    top: 10%;
+    left: 0%;
+    background: magenta;
+}
+#centerA{
+    position: absolute;
+    width: 50%;
+    height: 25%;
+    top: 10%;
+    left: 25%;
+    background: coral;
+}
+#centerB{
+    position: absolute;
+    width: 50%;
+    height: 65%;
+    top: 35%;
+    left: 25%;
+    background: aqua;
+}
+#right{
+    position: absolute;
+    width: 25%;
+    height: 90%;
+    top: 10%;
+    right: 0%;
+    background: chartreuse;
+}

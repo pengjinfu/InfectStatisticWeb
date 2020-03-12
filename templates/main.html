@@ -2,8 +2,10 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>实时疫情检控</title>
+        <title>实时疫情监控</title>
         <script src="../static/js/jquery-1.11.1.js"></script>
+        <script src="../static/js/echarts.min.js"></script>
+        <script src="../static/js/china.js"></script>
         <link href="../static/css/main.css" rel="stylesheet" />
     </head>
     <body>
@@ -22,36 +24,7 @@
         </div>
         <div id="centerB">中2</div>
         <div id="right">右</div>
-    <script>
-        function gettime(){
-            $.ajax({
-                url:"/time",
-                timeout:10000,//超时时间设置为10秒
-                success:function(data){
-                    $("#time").html(data)
-                },
-                error:function(xhr,type,errorThrown){
-
-                }
-            });
-        }
-
-        function get_centerA_data(){
-            $.ajax({
-                url:"/centerA",
-                success:function(data) {
-                    $(".num h1").eq(0).text(data.confirm);
-                    $(".num h1").eq(1).text(data.suspect);
-                    $(".num h1").eq(2).text(data.heal);
-                    $(".num h1").eq(3).text(data.dead);
-                },
-                error:function(xhr,type,errorThrown){
-
-                }
-            });
-        }
-        setInterval(gettime,1000)
-        setInterval(get_centerA_data,1000)
-    </script>
+        <script src="../static/js/echarts_map.js"></script>
+        <script src="../static/js/controller.js"></script>
     </body>
 </html>

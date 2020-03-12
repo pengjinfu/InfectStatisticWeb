@@ -49,5 +49,16 @@ def get_centerA_data():
     return res[0]
 
 
+def get_centerB_data():
+    # 获取map各省实时数据
+    # 取时间戳最新的那组数据
+    sql = "select province,sum(confirm) from details " \
+    "where update_time=(select update_time from details " \
+    "order by update_time desc limit 1) " \
+    "group by province"
+    res = query(sql)
+    return res
+
+
 if __name__ == "__main__":
-    print(get_centerA_data())
+    print(get_centerB_data())

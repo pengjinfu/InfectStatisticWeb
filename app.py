@@ -25,5 +25,14 @@ def get_centerA_data():
     return jsonify({"confirm": int(data[0]),"suspect": int(data[1]),"heal": int(data[2]),"dead": int(data[3])})
 
 
+@app.route("/centerB")
+def get_centerB_data():
+    res = []
+    for tup in utils.get_centerB_data():
+        print(tup)
+        res.append({"name":tup[0],"value":int(tup[1])})
+    return jsonify({"data":res})
+
+
 if __name__ == '__main__':
     app.run()

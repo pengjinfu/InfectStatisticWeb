@@ -43,6 +43,23 @@ function get_centerB_data(){
     })
 }
 
+function get_left_data(){
+    $.ajax({
+        url:"/left",
+        success:function(data){
+            echarts_linechart_option.xAxis[0].data = data.day
+            echarts_linechart_option.series[0].data = data.confirm
+            echarts_linechart_option.series[1].data = data.suspect
+            echarts_linechart_option.series[2].data = data.heal
+            echarts_linechart_option.series[3].data = data.dead
+            echarts_linechart.setOption(echarts_linechart_option)
+        },
+        error:function(xhr,type,errorThrown){
+
+        }
+    })
+}
+
 /*function get_detail(){
     $.ajax({
         url:"/detail",
@@ -60,6 +77,7 @@ function get_centerB_data(){
 gettime()
 get_centerA_data()
 get_centerB_data()
+get_left_data()
 //get_detail()
 //setInterval(gettime,1000)
 //setInterval(get_centerA_data,1000)

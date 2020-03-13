@@ -60,5 +60,12 @@ def get_centerB_data():
     return res
 
 
+def get_left_data():
+    # 全国累计数据折线图
+    sql = "select ds,confirm,suspect,heal,dead from history"
+    res = query(sql)
+    return res
+
+
 if __name__ == "__main__":
-    print(get_centerB_data())
+    print(get_left_data())

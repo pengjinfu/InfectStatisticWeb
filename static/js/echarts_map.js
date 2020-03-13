@@ -1,4 +1,4 @@
-var echarts_map = echarts.init(document.getElementById('centerB'),"dark");
+var echarts_map = echarts.init(document.getElementById('centerB'),"vintage");
 
 var mydata = [{'name': '上海', 'value': 318},{'name': '云南', 'value': 162}]
 

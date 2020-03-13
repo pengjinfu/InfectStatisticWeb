@@ -29,10 +29,10 @@ body{
 #left{
     position: absolute;
     width: 25%;
-    height: 90%;
-    top: 10%;
+    height: 40%;
+    top: 50%;
     left: 0%;
-    background: magenta;
+    background: mistyrose;
 }
 #centerA{
     position: absolute;

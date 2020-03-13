@@ -1,3 +1,5 @@
+//var province_data = JSON.parse(window.localStorage.getItem('province_name'))
+
 function gettime(){
     $.ajax({
         url:"/time",
@@ -40,8 +42,24 @@ function get_centerB_data(){
         }
     })
 }
+
+/*function get_detail(){
+    $.ajax({
+        url:"/detail",
+        success:function(data)
+        {
+             $("#province").text(province_data);
+            //document.getElementById("province").innerHTML = localStorage.getItem("province_name");
+        },
+        error:function(){
+
+        }
+    })
+}*/
+
 gettime()
 get_centerA_data()
 get_centerB_data()
+//get_detail()
 //setInterval(gettime,1000)
 //setInterval(get_centerA_data,1000)

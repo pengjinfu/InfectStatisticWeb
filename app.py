@@ -34,5 +34,10 @@ def get_centerB_data():
     return jsonify({"data":res})
 
 
+@app.route("/detail")
+def get_detail():
+    return render_template("detail.html")
+
+
 if __name__ == '__main__':
     app.run()

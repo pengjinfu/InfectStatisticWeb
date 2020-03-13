@@ -57,4 +57,16 @@ var echarts_map_option = {
         data: mydata
     }]
 };
+
+
 echarts_map.setOption(echarts_map_option)
+
+
+echarts_map.on("click", function(param) {
+
+    location.href = "detail.html";
+    //window.localStorage.setItem('province_name',JSON.stringify(param.name))
+    window.open("http://localhost:63342/yiqing/templates/detail.html?_ijt=o1ccmsli15le4pk0eeqr8cjprd","_self");
+});
+
+
